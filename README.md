@@ -188,30 +188,6 @@ The backend constructs a structured prompt that:
 * Specifies the exact JSON schema
 * Uses negative instructions to prevent extra text
 
-### Negative Prompting
-
-```text
-Return ONLY valid JSON.
-Do not include markdown.
-Do not include explanations outside JSON.
-Do not invent information not present in the transcript.
-```
-
----
-
-## Hallucination Guardrails
-
-To improve reliability, the following safeguards were implemented:
-
-1. Explicit JSON schema in the prompt.
-2. Negative prompting.
-3. Removal of markdown code fences.
-4. Extraction of content between first `{` and last `}`.
-5. JSON parsing with `try/catch`.
-6. Fallback display of raw model response.
-7. Human review before final assessment.
-
----
 
 ## Design Challenges Tackled
 
@@ -268,26 +244,6 @@ I used **Llama 3.2** because:
 * Provides strong structured output performance.
 * Requires no API key or cloud access.
 * Works completely offline.
-
----
-
-## Example Commit History
-
-* Initial project setup
-* Add Express backend with Ollama integration
-* Add frontend UI
-* Implement JSON cleanup and parsing
-* Add README and documentation
-
----
-
-## Submission Components
-
-* Public GitHub repository
-* App demo video
-* Code walkthrough video
-* Hand-drawn sketch
-* Mind map
 
 ---
 
